@@ -1,0 +1,6 @@
+{
+  "name": "order-service",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "dependencies": { "express": "^4.19.0", "mongoose": "^8.4.0", "axios": "^1.7.0" }
+}

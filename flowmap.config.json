@@ -1,0 +1,8 @@
+{
+  "repos": ["E:/Projects/Deep Learning Projects/1. Job Finder"],
+  "ollama": {
+    "url": "http://localhost:11434",
+    "model": "qwen2.5-coder:7b"
+  },
+  "port": 4321
+}

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FlowMap</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="brand">FlowMap</div>
+    <div id="stats" class="stats"></div>
+    <input id="search" type="search" placeholder="Search endpoint, component, file…" autocomplete="off">
+    <label class="check"><input id="connected" type="checkbox"> Connected only</label>
+    <button id="fit" title="Fit map to screen">Fit</button>
+    <button id="rescan" title="Scan the repos again">Rescan</button>
+    <div id="ollama" class="pill" title="Ollama status">Ollama…</div>
+  </header>
+
+  <div id="repos" class="repos"></div>
+
+  <main>
+    <section id="canvas">
+      <svg id="svg" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,1 L9,5 L0,9 z" class="arrowhead"/>
+          </marker>
+          <marker id="arrow-hi" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,1 L9,5 L0,9 z" class="arrowhead hi"/>
+          </marker>
+        </defs>
+        <g id="view"><g id="heads"></g><g id="edges"></g><g id="nodes"></g></g>
+      </svg>
+      <div id="empty" class="empty" hidden></div>
+      <div class="legend">
+        <span><i class="k ui"></i>UI / caller</span>
+        <span><i class="k call"></i>API call</span>
+        <span><i class="k endpoint"></i>Endpoint</span>
+        <span><i class="k data"></i>Data</span>
+        <span><i class="k unmatched"></i>No match found</span>
+      </div>
+    </section>
+
+    <aside>
+      <div class="tabs">
+        <button data-tab="details" class="on">Details</button>
+        <button data-tab="chat">Chat</button>
+      </div>
+      <div id="details" class="panel"></div>
+      <div id="chat" class="panel" hidden>
+        <div id="context" class="context" hidden></div>
+        <div id="messages" class="messages"></div>
+        <form id="ask">
+          <textarea id="question" rows="2" placeholder="Ask about the flow, e.g. what data does checkout send?"></textarea>
+          <div class="askrow">
+            <select id="model" title="Ollama model"></select>
+            <button type="submit" id="send">Ask</button>
+          </div>
+        </form>
+      </div>
+    </aside>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
