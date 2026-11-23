@@ -90,7 +90,19 @@ node flowmap.js --no-open            # do not open the browser
 node flowmap.js scan                 # only scan and write .flowmap/graph.json
 ```
 
-You can also switch between installed models in the dropdown under the chat box. Smaller models (for example `qwen2.5-coder:3b`) answer faster on a laptop without a GPU; larger ones give better answers.
+You can also switch between installed models in the dropdown under the chat box. Smaller models answer faster on a laptop without a GPU; larger ones give better answers.
+
+| Model | Download | Licence | Good for |
+|---|---|---|---|
+| `qwen2.5-coder:1.5b` | ~1 GB | Apache-2.0 | laptops without a GPU |
+| `qwen2.5-coder:3b` | ~1.9 GB | Qwen Research (**non-commercial only**) | personal use and learning |
+| `qwen2.5-coder:7b` (default) | ~4.7 GB | Apache-2.0 | best answers; 8 GB+ RAM |
+
+FlowMap itself is MIT. Each model keeps its own licence, so for work or commercial use pick the 1.5b or 7b model.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
 
 ## Limits to know about
 
