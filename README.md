@@ -100,10 +100,6 @@ You can also switch between installed models in the dropdown under the chat box.
 
 FlowMap itself is MIT. Each model keeps its own licence, so for work or commercial use pick the 1.5b or 7b model.
 
-## License
-
-MIT. See [LICENSE](LICENSE).
-
 ## Limits to know about
 
 - The scan is pattern-based, so it finds the common ways of writing routes and calls, not every possible one. URLs built entirely at runtime, GraphQL, gRPC, message queues (Kafka, RabbitMQ) and RTK Query endpoints are not mapped yet.
@@ -133,3 +129,7 @@ src/chat.js           picks context for a question and talks to Ollama
 public/               the page (plain HTML, CSS and JS)
 example/              three tiny repos to try it on
 ```
+
+## License
+
+MIT. See [LICENSE](LICENSE).
